@@ -38,19 +38,19 @@ public class Order {
 
     @Column(nullable = false, unique = true, insertable = false)
     @ColumnDefault(value = "CURRENT_TIMESTAMP")
-    private Date createAt;
+    private Date createdAt;
 
     public Order() {
     }
 
     @Builder
-    public Order(String productId, Integer quantity, Integer unitPrice, Integer totalPrice, String userId, String orderId, Date createAt) {
+    public Order(String productId, Integer quantity, Integer unitPrice, Integer totalPrice, String userId, String orderId, Date createdAt) {
         this.productId = productId;
         this.quantity = quantity;
         this.unitPrice = unitPrice;
         this.totalPrice = totalPrice;
         this.userId = userId;
         this.orderId = orderId;
-        this.createAt = createAt;
+        this.createdAt = createdAt;
     }
 }
