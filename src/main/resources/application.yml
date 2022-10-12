@@ -22,6 +22,14 @@ spring:
     show-sql: true
     generate-ddl: true
 
+  #zipkin
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    enable : true
+  sleuth:
+    sampler:
+      probability: 1.0
+
 eureka:
   client:
     register-with-eureka: true
@@ -38,3 +46,9 @@ logging:
       hibernate:
         SQL: debug
         type: trace
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, info, busrefresh, metrics, prometheus
